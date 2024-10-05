@@ -13,7 +13,7 @@ A Internet diferencia-se da Web pois conectamos os computadores através da Inte
 - `URI` - identifica, na web, o que existe (animals.org/zebra);
 - `IRI` - identifica, na web, o que existe em qualquer linguagem (chinocada-complexa.com/chinês/coreano);
 
-A **Web Semântica** é uma extensão da Web atual onde a informação é usada para criação de significado, de modo a que computadores e pessoas trabalhem em cooperação de forma estruturada. No fundo, é adicionar metadados. Já  **Linked Data** é a conexão de dados entre diferentes domínios para maior poder de utilização.
+A **Web Semântica** é uma extensão da Web atual onde a informação é usada para criação de significado, de modo a que computadores e pessoas trabalhem em cooperação de forma estruturada. No fundo, é adicionar metadados. Já  **Linked Data** é a conexão de dados entre diferentes domínios para maior poder de utilização e exploração.
 
 ### Web Semantics Technologies
 
@@ -30,7 +30,7 @@ Linguage que representa recursos, sendo que os recursos podem ser qualquer coisa
 
 ### Linked Data
 
-Pode ser considerado linked data se, segundo Tim Berners-Lee reunir as seguintes quatro condições:
+Pode ser considerado linked data se, segundo Tim Berners-Lee, reunir as seguintes quatro condições:
 
 - Usa URI para identificar recursos;
 - Usa HTTP URIs para procurar os dados;
