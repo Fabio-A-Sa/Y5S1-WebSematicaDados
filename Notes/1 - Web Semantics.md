@@ -23,4 +23,17 @@ A **Web Semântica** é uma extensão da Web atual onde a informação é usada 
 
 ### Resource Description Framework
 
-Linguage que representa
+Linguage que representa recursos, sendo que os recursos podem ser qualquer coisa. É standard de W3C, um data model, e é aplicado sobretudo segundo relações entre documentos. A unidade básica é o *triple*:
+
+> <subject, property, object> <br>
+> <"Mozart", composed, "The Magic Flute"> <br>
+
+### Linked Data
+
+Pode ser considerado linked data se, segundo Tim Berners-Lee reunir as seguintes quatro condições:
+
+- Usa URI para identificar recursos;
+- Usa HTTP URIs para procurar os dados;
+- Proporciona informação no formato RDF;
+- Inclui links para outros data URIs;
+
