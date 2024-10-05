@@ -13,4 +13,14 @@ A Internet diferencia-se da Web pois conectamos os computadores através da Inte
 - `URI` - identifica, na web, o que existe (animals.org/zebra);
 - `IRI` - identifica, na web, o que existe em qualquer linguagem (chinocada-complexa.com/chinês/coreano);
 
-A **Web Semântica** é uma extensão da Web atual onde a informação é usada para criação de significado, de modo a que computadores e pessoas trabalhem em cooperação.
+A **Web Semântica** é uma extensão da Web atual onde a informação é usada para criação de significado, de modo a que computadores e pessoas trabalhem em cooperação de forma estruturada. No fundo, é adicionar metadados. Já  **Linked Data** é a conexão de dados entre diferentes domínios para maior poder de utilização.
+
+### Web Semantics Technologies
+
+- `RDF`, resource description framework;
+- `OWL`, web ontology language;
+- `SPARQL`, the query language;
+
+### Resource Description Framework
+
+Linguage que representa
