@@ -37,3 +37,12 @@ Pode ser considerado linked data se, segundo Tim Berners-Lee reunir as seguintes
 - Proporciona informação no formato RDF;
 - Inclui links para outros data URIs;
 
+Exemplos de data sources:
+
+1. Wikidata
+2. Schema.org
+3. Open PHACTS
+4. BBC Dynamic Semantic Publishing
+5. Google Knowledge Graph
+6. IBM Watson Discovery
+
