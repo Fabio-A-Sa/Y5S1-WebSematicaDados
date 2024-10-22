@@ -41,3 +41,7 @@ Para números devemos usar o standard IRI que é o `xsd` (XML Schema Datatype).
 
 Podemos ver os triplos como nós ligados por uma edge que lhes dá contexto e relação. Podem ser direcionados ou até multigrafos em contextos mais complexos e overlapped.
 
+### RDF Serialization
+
+É ver os grafos como texto e ficheiros para uma maior portabilidade. Um serializador é por exemplo o [Turtle](https://www.w3.org/TR/turtle/).
+
