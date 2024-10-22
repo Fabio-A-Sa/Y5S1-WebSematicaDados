@@ -45,4 +45,3 @@ Exemplos de data sources:
 4. BBC Dynamic Semantic Publishing
 5. Google Knowledge Graph
 6. IBM Watson Discovery
-
