@@ -45,3 +45,43 @@ Podemos ver os triplos como nós ligados por uma edge que lhes dá contexto e re
 
 É ver os grafos como texto e ficheiros para uma maior portabilidade. Um serializador é por exemplo o [Turtle](https://www.w3.org/TR/turtle/).
 
+#### Turtle
+
+"Terse RDF Triple Language" (Turtle) permite compactação de URIs (CURIEs) para prevenir partes repetidas de triples. 
+
+Some examples:
+
+```xml
+# This is a comment
+@prefix ex: <http://www.example.com/test#> . # end dot!
+@prefix rel: <http://relations.example.com/> .
+ex:this rel:in ex:box . # Another comment
+```
+
+Irá resultar em:
+
+```xml
+<http://www.example.com/test#this>
+    <http://relations.example.com/in>
+<http://www.example.com/test#box>
+```
+
+Literals:
+
+![Turtle literals](../Images/Turtle-literals.png)
+
+If two triples share both the same subject and predicate, the two objects can be separated by commas:
+
+![Triple with same subject and predicate](../Images/Turtle-same.png)
+
+With repeated object:
+
+![Turtle with repeated objects](../Images/Turtle-object.png)
+
+Há mais uma interessante abreviação em Turtle: `rdf:type` pode ser simplesmente `a`:
+
+```rdf
+dbr:Bob_Marley a foaf:Person
+```
+
+Existe também um editor online de Turtle: [YATE](https://perfectkb.github.io/yate/)
