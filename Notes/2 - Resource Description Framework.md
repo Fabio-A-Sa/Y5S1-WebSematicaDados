@@ -85,3 +85,14 @@ dbr:Bob_Marley a foaf:Person
 ```
 
 Existe também um editor online de Turtle: [YATE](https://perfectkb.github.io/yate/)
+
+### Examples
+
+```xml
+<A, rdf:type, B> - A belongs to B
+<P, rdf:type, rdf:Property> - P is a property
+<rdf:type, rdf:type, rdf:Property> - rdf:type is a property
+```
+
+## RDF Schema
+
