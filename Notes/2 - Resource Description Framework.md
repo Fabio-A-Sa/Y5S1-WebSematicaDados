@@ -94,5 +94,6 @@ Existe também um editor online de Turtle: [YATE](https://perfectkb.github.io/ya
 <rdf:type, rdf:type, rdf:Property> - rdf:type is a property
 ```
 
-## RDF Schema
+## RDF Schema - RDFS
 
+Permite representar ontologias e vocabulários usando RDF. 
