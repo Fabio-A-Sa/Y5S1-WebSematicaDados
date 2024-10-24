@@ -96,4 +96,51 @@ Existe também um editor online de Turtle: [YATE](https://perfectkb.github.io/ya
 
 ## RDF Schema - RDFS
 
-Permite representar ontologias e vocabulários usando RDF. 
+Permite representar ontologies, representando um vocabulário standard para ser usado nas RDF descriptions. O vocabulário é um conjunto de proprieddes e classes.
+
+- É uma recomendação W3C;
+- É uma extensão do RDF;
+- Descreve recursos com classes, propriedades e valores;
+
+Examples:
+
+1. Declaring classes of resources:
+
+```xml
+<Woman> as rdfs:Class ;
+    rdfs.subClassOf <Person>, <Female> .
+```
+
+2. Declaring types of Properties:
+
+```xml
+<hasMother> a rdf.Property ;
+    rdfs:subPropertyOf <hasParent> .
+```
+
+3. Declaring Property Signatures:
+
+```xml
+rdfs.domain <Person> ;
+rdfs.range <Woman> .
+```
+
+4. Documentating Class and Property Declarations:
+
+```xml
+<Woman> a rdfs:Class ;
+rdfs:label "woman"@en ;
+rdfs:comment "an adult female person"@en .
+
+<hasMother> a rdf:Property ;
+rdfs:label "has for mother"@en ;
+rdfs:comment "to have a woman for mother"@en .
+```
+
+5. Referencing and Using Schemas:
+
+```xml
+@prefix h: <http://fe.up.pt/2021/students.rdfs#>
+@base < http://fe.up.pt/2021/students.rdfs-instances>
+<Alice> a h:Woman; h:hasMother <Laura> .
+```
