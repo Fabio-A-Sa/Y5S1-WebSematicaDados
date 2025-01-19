@@ -6,4 +6,5 @@
 - Semantic Web é uma extensão da web em que a informação tem meaning (até metadata), tornando possível a cooperação computer-people;
 - Linked Data, para utilização de data entre diferentes domínios para mais meaningfull use;
 - 4 Principles: URI, HTTP, RDF, Linked URIs;
+- RDF é um Data Model Graph Based Model (subject, predicate/property/statement, object/value, M composed T);
 - 
