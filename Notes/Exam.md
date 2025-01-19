@@ -6,5 +6,7 @@
 - Semantic Web é uma extensão da web em que a informação tem meaning (até metadata), tornando possível a cooperação computer-people;
 - Linked Data, para utilização de data entre diferentes domínios para mais meaningfull use;
 - 4 Principles: URI, HTTP, RDF, Linked URIs;
-- RDF é um Data Model Graph Based Model (subject, predicate/property/statement, object/value, M composed T);
+- RDF é um Abstract Data Model Graph Based Model (subject, predicate/property/statement, object/value, M composed T);
+- Em Turtle, vírgula para apontar vários objects com o mesmo subject e property, ponto e vírgula para apontar vários pares property-object para o mesmo subject;
+- "a" quer dizer rdf:type ("X é um Y");
 - 
