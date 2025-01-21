@@ -9,4 +9,9 @@
 - RDF é um Abstract Data Model Graph Based Model (subject, predicate/property/statement, object/value, M composed T);
 - Em Turtle, vírgula para apontar vários objects com o mesmo subject e property, ponto e vírgula para apontar vários pares property-object para o mesmo subject;
 - "a" quer dizer rdf:type ("X é um Y");
+- RDFSchema para representar ontologias, tem um standard vocabulary;
+- <Woman> a rdfs:Class ; rdfs:subClassOf <Person>, <Female> .
+- SPARQL retrieves data from structured and semi-structured data;
+- Ontologies porque RDF(S) não consegue descrever recursos com restrições de domínio, contexto, cardinalidades, transitive, simetrical, properties;
+- Ontology são regras e conhecimentos sobre as relações que são válidas, permitidas e que fazem sentido dentro de um domínio ou contexto, especificadas de forma explícita e formal;
 - 
