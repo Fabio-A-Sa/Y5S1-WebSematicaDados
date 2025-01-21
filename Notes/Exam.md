@@ -17,4 +17,7 @@
 - Ontologies usadas para domínios complexos, grandes, para variedade de recursos;
 - Legibilidade das máquinas, entendimento do domínio, tirar conclusões/suposições, separam o domínio e operações;
 - OWL Lite para aplicações simples, OWL DL balanceia expressividade e decidibilidade mas perde compatibilidade com RDF (OWL DL é RDF mas nem todo RDF é OWL DL), OWL Full mais expressiva e menos eficiente;
-- 
+- Ontology deve ser clara, expressiva, extendível, mínima, capitalizada, CamelCase or delimiters;
+- Ontology deve suportar cardinalidade, restrições, properties, inverse, simetrical, transitive, equiality;
+- IRI uniquely identifies a resource, but one resource can have many IRIs;
+- owl:FunctionalProperty pode ser usada apenas 1 vez por indivíduo (por exemplo em birthDate);
