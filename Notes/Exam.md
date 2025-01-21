@@ -14,4 +14,7 @@
 - SPARQL retrieves data from structured and semi-structured data;
 - Ontologies porque RDF(S) não consegue descrever recursos com restrições de domínio, contexto, cardinalidades, transitive, simetrical, properties;
 - Ontology são regras e conhecimentos sobre as relações que são válidas, permitidas e que fazem sentido dentro de um domínio ou contexto, especificadas de forma explícita e formal;
+- Ontologies usadas para domínios complexos, grandes, para variedade de recursos;
+- Legibilidade das máquinas, entendimento do domínio, tirar conclusões/suposições, separam o domínio e operações;
+- OWL Lite para aplicações simples, OWL DL balanceia expressividade e decidibilidade, OWL Full mais expressiva e menos eficiente;
 - 
