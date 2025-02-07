@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordify - Entity Lookup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/logo_minimized_1.png') }}" alt="Wordify Logo" height="200px" width="200px">
+    </div>
+    <div class="logo">
+        <a href="{{ url_for('index') }}">Wordify</a>
+    </div>
+    <form action="/search" method="POST" class="search-container">
+        <input type="text" name="entity" placeholder="Look up an entity..." class="search-bar" required>
+        <button type="submit" class="search-button">Search</button>
+        <select name="language" class="language-dropdown">
+            <option value="en">English</option>
+            <option value="pt">Português</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="it">Italiano</option>
+            <option value="zh">中文</option>
+        </select>
+    </form>
+</body>
+</html>

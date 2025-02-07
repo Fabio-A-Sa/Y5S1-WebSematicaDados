@@ -1,0 +1,21 @@
+# WSDL Project
+
+Wordify is a system that disambiguates existing entities, possibly in different languages, using Web Semantics and Linked Data principles, concepts, and technologies. It will help a computer and humans to perceive which entity is being referred to, if it is ambiguous in a certain context, or to consult false friends between languages.
+
+## Installation & Run
+
+```sh
+$ cd ./src
+$ docker compose build
+$ docker compose up
+```
+
+And then go to http://localhost:8082
+
+## Members
+
+- Fábio Araújo de Sá (up202007658@up.pt)
+- Marcos Rafael Peixoto Aires (up202006888@up.pt)
+- Pedro Pereira Ferreira (up202004986@up.pt)
+
+MEIC, 24/25

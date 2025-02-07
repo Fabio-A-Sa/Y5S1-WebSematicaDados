@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definition Results</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background-color: #4a4a4a;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .header a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .container {
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-height: 500px; /* Ensures vertical stretching */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .minimal-languages {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .results-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .ambiguities,
+        .falseFriends {
+            flex: 1;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .ambiguities h2,
+        .falseFriends h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        ul li ul {
+            margin-left: 1.5rem;
+            list-style: disc;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-group h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .filter-group .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filter-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+        }
+
+        .button-group button {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .apply-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .apply-button:hover {
+            background-color: #45a049;
+        }
+
+        .clear-button {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        .clear-button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/logo_minimized_1.png') }}" alt="Wordify Logo">
+        </a>
+        <a href="{{ url_for('index') }}">Wordify</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="title">
+            <h1 id="entityValue">{{ entity }}</h1>
+        </div>
+
+        <div class="meaning">
+
+            <h2>Meaning</h2>
+            <p>{{results['definition']}}</p>
+        </div>
+
+        <!-- Filters Section -->
+        <form method="get" action="{{ url_for('search_results', entity=entity, language=language) }}">
+            <div class="filters">
+                <div class="filter-group">
+                    <h3>Source Filter</h3>
+                    <div class="filter-options">
+                        <label>
+                            <input type="radio" name="source" value="dbpedia" {% if request.args.get('source') == 'dbpedia' %} checked {% endif %}>
+                            DBpedia
+                        </label>
+                        <label>
+                            <input type="radio" name="source" value="wikidata" {% if request.args.get('source') == 'wikidata' %} checked {% endif %}>
+                            Wikidata
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="button-group">
+                    <button type="submit" class="apply-button">Apply Filters</button>
+                    <button type="submit" class="clear-button" name="clear" value="true">Clear Filters</button>
+                </div>
+            </div>
+        </form>
+
+        {% if results and results['language_guess_probabilities'] %}
+        <div class="minimal-languages">
+            Top 5 Languages: (
+            {% for language in results['language_guess_probabilities'][:5] %}
+            {{ language['language'] }}: {{ language['probability'] }}%{% if not loop.last %}, {% endif %}
+            {% endfor %}
+            )
+        </div>
+        {% endif %}
+
+        <div class="results-container">
+            
+            <div class="ambiguities">
+                <h2>Ambiguities</h2>
+                {% if results %}
+                <ul>
+                    {% for ambiguity in results['ambiguities'] %}
+                    <ul>
+                        <a href="{{ ambiguity['entity1'] }}" target="_blank">
+                            {{ ambiguity['definition1'] }}
+                        </a> vs
+                        <a href="{{ ambiguity['entity2'] }}" target="_blank">
+                            {{ ambiguity['definition2'] }} ({{ ambiguity['lang'] }})
+                        </a>
+                    </ul>
+                    <br>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No results found.</p>
+                {% endif %}
+            </div>
+            <div class="falseFriends">
+                <h2>False Friends</h2>
+                {% if results %}
+                <ul>
+                    {% for false_friend in results['false_friends'] %}
+                    <ul>
+                        <a href="{{ false_friend['entity1'] }}" target="_blank">
+                            {{ false_friend['definition1'] }} ({{ false_friend['lang1'] }})
+                        </a> vs
+                        <a href="{{ false_friend['entity2'] }}" target="_blank">
+                            {{ false_friend['definition2'] }} ({{ false_friend['lang2'] }})
+                        </a>
+                    </ul>
+                    <br>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No results found.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
